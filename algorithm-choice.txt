@@ -1,2 +1,2 @@
 Epsilon-greedy.
-The rewards are continuous non-negative values with a point mass at zero and a tail well above 1, so Beta-Bernoulli Thompson sampling (needs 0/1 rewards) and UCB1 (needs rewards bounded in a known [0,1] range) do not apply, while epsilon-greedy only needs sample means.
+The rewards are continuous non-negative values with a point mass at zero and a tail well above 1, so Beta-Bernoulli Thompson sampling (needs 0/1 rewards) and UCB1 (needs rewards bounded in a known [0,1] range) do not directly apply to these raw rewards, while epsilon-greedy only needs sample means.

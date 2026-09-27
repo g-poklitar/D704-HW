@@ -1,5 +1,0 @@
-Epsilon-greedy.
-
-The environment yields continuous, non-negative rewards that are not strictly bounded within a [0, 1] range. 
-Standard UCB1 assumes rewards are strictly bounded in [0, 1], and Beta-Bernoulli Thompson Sampling requires binary (0/1) outcomes. 
-Epsilon-greedy is the most robust choice here because it relies solely on empirical sample means and makes no rigid assumptions about the underlying reward distribution boundaries.

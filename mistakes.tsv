@@ -1,0 +1,6 @@
+query	target_category	predicted_category
+Roof leak stains by the light; the ceiling fixture's splice is wet and corroded	electrical	roofing
+Light flickers above a shower with a clogged P-trap	plumbing	electrical
+Outlet crackles by sink; faucet supply line sprays inside cabinet	plumbing	electrical
+Kitchen lights strobe; fridge water line leaks onto outlet	plumbing	electrical
+Buzzing switch beside a dripping shutoff valve under sink	plumbing	electrical

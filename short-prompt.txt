@@ -1,0 +1,4 @@
+Classify this home service request as electrical, plumbing, or roofing (the trade that would do the work). Reply with one word only.
+
+Request: {query}
+Category:

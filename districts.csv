@@ -1,0 +1,9 @@
+district_id,district_name,population,area_sq_km,road_miles,median_income_usd,housing_units
+D01,North Harbor,74000,13.4,106.2,69000,29200
+D02,Eastbank,90000,16.7,124.8,58000,34900
+D03,Cedar Hills,61000,20.5,142.6,98000,23600
+D04,Old Port,84000,11.8,92.4,74000,32400
+D05,Riverside,79000,18.2,128.9,62000,30300
+D06,Southpoint,95000,15.6,135.7,55000,38100
+D07,West Commons,68000,19.1,118.5,82000,26500
+D08,Lakeview,85000,21.9,149.3,76000,33000

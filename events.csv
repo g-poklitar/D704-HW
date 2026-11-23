@@ -1,0 +1,101 @@
+event_id,start_date,end_date,district_id,event_type,intensity,description
+E001,2025-01-03,2025-01-04,D04,Construction,3,Major street or utility construction activity
+E002,2025-01-05,2025-01-08,D08,Community Event,4,High attendance at a neighborhood event
+E003,2025-01-08,2025-01-09,D01,Construction,4,Major street or utility construction activity
+E004,2025-01-08,2025-01-08,D02,Construction,3,Major street or utility construction activity
+E005,2025-01-11,2025-01-11,D06,Rainstorm,3,Heavy precipitation recorded in the district
+E006,2025-01-13,2025-01-13,D01,Rainstorm,2,Heavy precipitation recorded in the district
+E007,2025-01-17,2025-01-20,D08,Cold Snap,4,Freezing conditions affect outdoor infrastructure
+E008,2025-01-19,2025-01-19,D08,Construction,2,Major street or utility construction activity
+E009,2025-01-20,2025-01-21,D06,Heatwave,3,An extended period of high temperatures
+E010,2025-01-30,2025-01-30,D05,Cold Snap,1,Freezing conditions affect outdoor infrastructure
+E011,2025-02-10,2025-02-12,D06,Outreach Campaign,1,Public information and neighborhood outreach initiative
+E012,2025-02-16,2025-02-17,D01,Construction,2,Major street or utility construction activity
+E013,2025-02-25,2025-02-25,D06,Outreach Campaign,2,Public information and neighborhood outreach initiative
+E014,2025-03-02,2025-03-03,D03,Rainstorm,3,Heavy precipitation recorded in the district
+E015,2025-03-03,2025-03-03,D04,Rainstorm,1,Heavy precipitation recorded in the district
+E016,2025-03-09,2025-03-11,D01,Rainstorm,2,Heavy precipitation recorded in the district
+E017,2025-03-10,2025-03-12,D03,Community Event,3,High attendance at a neighborhood event
+E018,2025-03-11,2025-03-13,D01,Community Event,4,High attendance at a neighborhood event
+E019,2025-03-17,2025-03-17,D01,Rainstorm,3,Heavy precipitation recorded in the district
+E020,2025-03-19,2025-03-19,D05,Rainstorm,4,Heavy precipitation recorded in the district
+E021,2025-03-20,2025-03-23,D08,Construction,2,Major street or utility construction activity
+E022,2025-03-21,2025-03-22,D05,Cold Snap,1,Freezing conditions affect outdoor infrastructure
+E023,2025-03-22,2025-03-25,D07,Rainstorm,3,Heavy precipitation recorded in the district
+E024,2025-03-23,2025-03-26,D02,Rainstorm,1,Heavy precipitation recorded in the district
+E025,2025-03-28,2025-03-30,D01,Construction,2,Major street or utility construction activity
+E026,2025-03-28,2025-03-28,D08,Community Event,4,High attendance at a neighborhood event
+E027,2025-03-30,2025-04-01,D05,Transit Disruption,4,Temporary road and transit access restrictions
+E028,2025-04-13,2025-04-14,D06,Rainstorm,4,Heavy precipitation recorded in the district
+E029,2025-04-15,2025-04-17,D01,Transit Disruption,3,Temporary road and transit access restrictions
+E030,2025-04-22,2025-04-23,D07,Cold Snap,3,Freezing conditions affect outdoor infrastructure
+E031,2025-04-27,2025-04-28,D02,Community Event,1,High attendance at a neighborhood event
+E032,2025-05-01,2025-12-31,D02,Mobile Reporting Rollout,3,Mobile app reporting becomes available to Eastbank residents
+E033,2025-05-04,2025-05-04,D01,Transit Disruption,2,Temporary road and transit access restrictions
+E034,2025-05-09,2025-05-11,D02,Heatwave,4,An extended period of high temperatures
+E035,2025-05-12,2025-05-16,D02,Rainstorm,5,Major rainfall and road-surface damage reported
+E036,2025-05-15,2025-05-15,D08,Construction,4,Major street or utility construction activity
+E037,2025-05-21,2025-05-21,D07,Community Event,4,High attendance at a neighborhood event
+E038,2025-05-27,2025-05-29,D02,Construction,1,Major street or utility construction activity
+E039,2025-05-27,2025-05-30,D04,Cold Snap,4,Freezing conditions affect outdoor infrastructure
+E040,2025-05-27,2025-05-27,D05,Heatwave,4,An extended period of high temperatures
+E041,2025-05-28,2025-05-31,D02,Community Event,2,High attendance at a neighborhood event
+E042,2025-05-28,2025-05-29,D04,Construction,1,Major street or utility construction activity
+E043,2025-05-30,2025-06-01,D06,Rainstorm,2,Heavy precipitation recorded in the district
+E044,2025-05-31,2025-05-31,D04,Transit Disruption,3,Temporary road and transit access restrictions
+E045,2025-06-02,2025-06-05,D05,Community Event,1,High attendance at a neighborhood event
+E046,2025-06-13,2025-06-14,D01,Cold Snap,4,Freezing conditions affect outdoor infrastructure
+E047,2025-06-14,2025-06-14,D03,Construction,1,Major street or utility construction activity
+E048,2025-06-16,2025-12-31,D05,Staffing Expansion,3,Additional field staff assigned to Riverside
+E049,2025-06-17,2025-06-20,D06,Heatwave,3,An extended period of high temperatures
+E050,2025-06-21,2025-06-23,D07,Rainstorm,1,Heavy precipitation recorded in the district
+E051,2025-06-23,2025-06-24,D06,Outreach Campaign,2,Public information and neighborhood outreach initiative
+E052,2025-07-04,2025-07-07,D05,Rainstorm,1,Heavy precipitation recorded in the district
+E053,2025-07-07,2025-07-08,D08,Transit Disruption,3,Temporary road and transit access restrictions
+E054,2025-07-14,2025-07-15,D06,Construction,1,Major street or utility construction activity
+E055,2025-07-17,2025-07-19,D07,Community Event,4,High attendance at a neighborhood event
+E056,2025-07-23,2025-07-26,D01,Heatwave,2,An extended period of high temperatures
+E057,2025-07-23,2025-07-26,D04,Construction,3,Major street or utility construction activity
+E058,2025-07-24,2025-07-25,D04,Rainstorm,2,Heavy precipitation recorded in the district
+E059,2025-07-28,2025-07-28,D01,Outreach Campaign,3,Public information and neighborhood outreach initiative
+E060,2025-07-29,2025-08-01,D01,Rainstorm,1,Heavy precipitation recorded in the district
+E061,2025-07-29,2025-07-30,D03,Community Event,1,High attendance at a neighborhood event
+E062,2025-08-07,2025-08-10,D05,Transit Disruption,2,Temporary road and transit access restrictions
+E063,2025-08-08,2025-08-08,D06,Transit Disruption,2,Temporary road and transit access restrictions
+E064,2025-08-10,2025-08-13,D07,Rainstorm,4,Heavy precipitation recorded in the district
+E065,2025-08-15,2025-08-17,D05,Rainstorm,2,Heavy precipitation recorded in the district
+E066,2025-08-20,2025-08-21,D03,Rainstorm,4,Heavy precipitation recorded in the district
+E067,2025-09-01,2025-12-31,D06,Triage Workflow Update,3,A revised closure and intake workflow is adopted
+E068,2025-09-04,2025-09-07,D07,Community Event,4,High attendance at a neighborhood event
+E069,2025-09-05,2025-09-08,D02,Rainstorm,3,Heavy precipitation recorded in the district
+E070,2025-09-07,2025-09-10,D01,Transit Disruption,2,Temporary road and transit access restrictions
+E071,2025-09-07,2025-09-09,D07,Community Event,1,High attendance at a neighborhood event
+E072,2025-09-09,2025-09-09,D06,Construction,1,Major street or utility construction activity
+E073,2025-09-10,2025-09-11,D04,Rainstorm,4,Heavy precipitation recorded in the district
+E074,2025-09-13,2025-09-16,D06,Transit Disruption,2,Temporary road and transit access restrictions
+E075,2025-09-14,2025-09-16,D04,Construction,1,Major street or utility construction activity
+E076,2025-09-14,2025-09-16,D07,Construction,1,Major street or utility construction activity
+E077,2025-09-20,2025-09-21,D02,Rainstorm,2,Heavy precipitation recorded in the district
+E078,2025-09-21,2025-09-23,D03,Transit Disruption,3,Temporary road and transit access restrictions
+E079,2025-09-23,2025-09-23,D07,Transit Disruption,2,Temporary road and transit access restrictions
+E080,2025-10-05,2025-10-07,D08,Rainstorm,4,Heavy precipitation recorded in the district
+E081,2025-10-24,2025-10-24,D04,Community Event,3,High attendance at a neighborhood event
+E082,2025-10-31,2025-11-02,D06,Heatwave,1,An extended period of high temperatures
+E083,2025-11-09,2025-11-09,D04,Cold Snap,2,Freezing conditions affect outdoor infrastructure
+E084,2025-11-09,2025-11-12,D07,Construction,1,Major street or utility construction activity
+E085,2025-11-10,2025-11-13,D04,Construction,1,Major street or utility construction activity
+E086,2025-11-15,2025-11-15,D08,Outreach Campaign,4,Public information and neighborhood outreach initiative
+E087,2025-11-16,2025-11-17,D03,Community Event,2,High attendance at a neighborhood event
+E088,2025-11-17,2025-11-17,D03,Cold Snap,1,Freezing conditions affect outdoor infrastructure
+E089,2025-11-17,2025-11-20,D08,Community Event,1,High attendance at a neighborhood event
+E090,2025-11-25,2025-11-27,D02,Transit Disruption,2,Temporary road and transit access restrictions
+E091,2025-11-26,2025-11-29,D03,Rainstorm,3,Heavy precipitation recorded in the district
+E092,2025-11-29,2025-12-02,D08,Cold Snap,1,Freezing conditions affect outdoor infrastructure
+E093,2025-12-03,2025-12-04,D05,Construction,2,Major street or utility construction activity
+E094,2025-12-08,2025-12-10,D05,Outreach Campaign,4,Public information and neighborhood outreach initiative
+E095,2025-12-09,2025-12-09,D07,Community Event,4,High attendance at a neighborhood event
+E096,2025-12-13,2025-12-13,D02,Outreach Campaign,2,Public information and neighborhood outreach initiative
+E097,2025-12-15,2025-12-15,D03,Construction,2,Major street or utility construction activity
+E098,2025-12-15,2025-12-17,D06,Heatwave,4,An extended period of high temperatures
+E099,2025-12-20,2025-12-22,D06,Cold Snap,3,Freezing conditions affect outdoor infrastructure
+E100,2025-12-26,2025-12-27,D03,Cold Snap,2,Freezing conditions affect outdoor infrastructure

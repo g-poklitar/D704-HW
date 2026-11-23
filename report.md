@@ -2,98 +2,167 @@
 
 ## 1. Executive Summary
 
-The request labels identify **1,127 hazard-yes requests** representing **1,122 distinct incidents**, while **126 requests remain unknown**. Eastbank has the highest population-normalized hazard request rate (**25.00 per 10,000 residents**); Old Port has the highest hazard share (**72.00%**) and the longest median hazard closure time (**75.65 hours**). Operational consistency warrants review: **812 of 1,127 (72.05%)** LLM-flagged hazards were assigned Routine or Unassigned intake priority, and the LLM safety-hazard label matched the validation reference in **152 of 200 cases (76.00%)**. These are request and association patterns, not proof of incident prevalence or causes.
+In 2025, the LLM marked **1,127 of 2,000 requests** as safety hazards, representing **1,122 distinct incident IDs**; **126 requests remained unknown**. Eastbank had the highest population-normalized hazard request rate (**25.00 per 10,000 residents**), while Old Port had the highest hazard share of requests (**72.00%**) and the longest hazard median closure time (**75.65 hours**). A substantial intake mismatch merits attention: **812/1,127 flagged hazards (72.05%)** were assigned Routine or Unassigned intake priority. Validation found only **76.00% safety-hazard accuracy** on a 200-request sample, so these patterns are signals for review, not verified incident counts or evidence of cause.
 
 ## 2. Quantitative Results
 
-**A. Citywide classification and duplicate sensitivity.** The system labels **1,127 requests yes (1,122 distinct incident IDs)**, **747 no (745 distinct incident IDs)**, and **126 unknown (125 distinct incident IDs)**. These counts come from grouping requests by LLM safety-hazard label and counting both rows and distinct `incident_id`. Counting distinct incidents reduces the hazard-yes total by **5**; Eastbank's hazard count changes from **225 requests to 222 incidents**, but it remains the top district by rate. Thus duplicates make a small difference to these headline rankings, though the request counts are not incident counts.
+All request analyses cover records dated **2025-01-01 through 2025-12-31**. Counts below are request counts unless explicitly described as distinct incidents.
 
-**B. District variation.** Rates use requests divided by district population and multiplied by 10,000; hazard share uses hazard requests divided by all requests in that district. The table reports those denominators explicitly.
+### Overall labels and duplicates
 
-| District | Population | Requests (all) | Hazard requests | Distinct hazard incidents | Hazards per 10,000 residents | Hazard share of requests |
+| LLM safety-hazard label | Requests | Distinct incident IDs |
+|---|---:|---:|
+| yes | 1,127 | 1,122 |
+| no | 747 | 745 |
+| unknown | 126 | 125 |
+
+There were **2,000 requests** and **1,986 distinct incident IDs** overall. Deduplicating by incident ID reduces the flagged-hazard figure by **5** (from 1,127 requests to 1,122 incident IDs). Distinct-ID counts are calculated separately within each label, so they are not necessarily a partition of distinct incidents if an incident has differently labelled reports.
+
+### Geography
+
+The per-capita denominator is district population; hazard share uses all requests in that district.
+
+| District | Population | Total requests | Hazard requests | Hazard incidents (distinct IDs) | Hazards per 10,000 residents | Hazard share of district requests |
 |---|---:|---:|---:|---:|---:|---:|
 | Eastbank | 90,000 | 388 | 225 | 222 | 25.00 | 57.99% |
 | Old Port | 84,000 | 250 | 180 | 178 | 21.43 | 72.00% |
 | West Commons | 68,000 | 200 | 119 | 119 | 17.50 | 59.50% |
 | Southpoint | 95,000 | 308 | 166 | 166 | 17.47 | 53.90% |
 | Riverside | 79,000 | 227 | 120 | 120 | 15.19 | 52.86% |
-| North Harbor | 74,000 | 198 | 108 | 108 | 14.59 | 54.55% |
 | Cedar Hills | 61,000 | 187 | 89 | 89 | 14.59 | 47.59% |
+| North Harbor | 74,000 | 198 | 108 | 108 | 14.59 | 54.55% |
 | Lakeview | 85,000 | 242 | 120 | 120 | 14.12 | 49.59% |
 
-Eastbank's rate is the highest; its **225 / 388** hazard share is not the highest. Old Port's share is highest, based on **180 / 250** requests. The rate calculation normalizes request counts by population, while the share describes the composition of requests, not resident risk.
+Eastbank stands out for the highest normalized rate (**225/90,000 × 10,000 = 25.00**); Old Port stands out on within-district share (**180/250 = 72.00%**). These measure different things and point to different districts for follow-up.
 
-**C. Intake priority and urgency.** Within LLM hazard-yes requests, **750 / 1,127 (66.55%)** were intake Routine and **62 / 1,127 (5.50%)** Unassigned. Combined, **812 / 1,127 (72.05%)** were Routine or Unassigned. The hazard/urgency breakdown by intake priority is:
+### Intake priority and handling
 
-| Intake priority | Hazard requests | LLM urgent | LLM routine |
-|---|---:|---:|---:|
-| High | 315 | 244 | 71 |
-| Routine | 750 | 244 | 506 |
-| Unassigned | 62 | 37 | 25 |
+Of LLM-flagged hazards, **812 of 1,127 (72.05%)** were given intake priority Routine or Unassigned: 750 Routine and 62 Unassigned. The complete hazard/urgency-by-priority cross-tabulation is below; each cell gives request counts by LLM hazard label and urgency.
 
-These cells are counts from the intake-priority × safety-hazard × urgency cross-tab; no hazard-yes request had LLM urgency unknown in that query. This points to a triage review opportunity, not a conclusion that every flagged item should have been High priority.
+| Intake priority | LLM hazard label | LLM urgency: routine | urgent | unknown | Total |
+|---|---|---:|---:|---:|---:|
+| High | yes | 71 | 244 | 0 | 315 |
+| High | no | 83 | 15 | 0 | 98 |
+| High | unknown | 2 | 0 | 7 | 9 |
+| Routine | yes | 506 | 244 | 0 | 750 |
+| Routine | no | 593 | 16 | 0 | 609 |
+| Routine | unknown | 22 | 0 | 62 | 84 |
+| Unassigned | yes | 25 | 37 | 0 | 62 |
+| Unassigned | no | 40 | 0 | 0 | 40 |
+| Unassigned | unknown | 0 | 0 | 33 | 33 |
 
-**D. Handling time.** `hours_to_close` averages and medians exclude requests without a close time. For hazard-yes requests, **1,122 closed requests** had a mean of **59.06 hours** and median of **23.99 hours**. For no-or-unknown requests, **872 closed requests** had a mean of **33.23 hours** and median of **14.18 hours**. These are descriptive comparisons across closed requests. By intake priority within hazards: High (**315 closed**) averaged **82.11 hours**, median **54.02**; Routine (**746 closed**) averaged **49.59**, median **20.11**; Unassigned (**61 closed**) averaged **55.71**, median **36.47**.
+Closure durations below use requests with a non-null `hours_to_close`; n is the number of closed requests. Unknown hazard labels are kept separate from “no.”
 
-| District | Hazard yes: closed n | Hazard median (hours) | No/unknown: closed n | No/unknown median (hours) |
+| LLM hazard label | Requests | Closed n | Average hours to close | Median hours to close |
 |---|---:|---:|---:|---:|
-| Cedar Hills | 89 | 22.10 | 98 | 16.00 |
-| Eastbank | 225 | 17.72 | 163 | 10.43 |
-| Lakeview | 119 | 25.72 | 122 | 15.94 |
-| North Harbor | 107 | 22.03 | 90 | 13.83 |
-| Old Port | 179 | 75.65 | 70 | 23.85 |
-| Riverside | 119 | 21.48 | 107 | 14.95 |
-| Southpoint | 165 | 18.80 | 141 | 12.92 |
-| West Commons | 119 | 24.02 | 81 | 13.87 |
+| yes | 1,127 | 1,122 | 59.06 | 23.99 |
+| no | 747 | 747 | 30.73 | 13.62 |
+| unknown | 126 | 125 | 48.22 | 17.50 |
 
-Old Port stands out on closure time: hazard median **75.65 hours**, compared with **23.85 hours** for its no-or-unknown requests. Its hazard mean is **99.59 hours** (179 closed hazards). District medians and means are associations; they do not adjust for work type or complexity.
+District closure results (each duration cell is average / median hours; n is closed requests):
 
-**E. Time, events, and reporting channel.** Eastbank hazard counts by month were Jan **10**, Feb **11**, Mar **8**, Apr **15**, May **32**, Jun **30**, Jul **25**, Aug **27**, Sep **16**, Oct **20**, Nov **15**, and Dec **16**. This is a request count by `created_at` month; duplicates are included. In the Eastbank event records, rainstorms occurred Mar 23–26, May 12–16, Sep 5–8, and Sep 20–21; the May event description notes major rainfall and road-surface damage. The Mobile Reporting Rollout is recorded for Eastbank from **May 1 through Dec 31, 2025**.
+| District | yes n; avg / median | no n; avg / median | unknown n; avg / median |
+|---|---:|---:|---:|
+| Cedar Hills | 89; 57.91 / 22.10 | 92; 64.18 / 16.58 | 6; 13.26 / 12.22 |
+| Eastbank | 225; 49.12 / 17.72 | 139; 23.58 / 10.47 | 24; 18.03 / 8.45 |
+| Lakeview | 119; 45.67 / 25.72 | 104; 24.19 / 15.43 | 18; 21.44 / 18.33 |
+| North Harbor | 107; 67.74 / 22.03 | 83; 22.65 / 13.75 | 7; 29.90 / 17.32 |
+| Old Port | 179; 99.59 / 75.65 | 55; 60.55 / 17.20 | 15; 204.27 / 63.12 |
+| Riverside | 119; 36.08 / 21.48 | 94; 22.86 / 14.07 | 13; 25.32 / 21.38 |
+| Southpoint | 165; 41.76 / 18.80 | 113; 22.38 / 11.75 | 28; 40.12 / 15.16 |
+| West Commons | 119; 70.26 / 24.02 | 67; 20.38 / 13.42 | 14; 28.81 / 17.48 |
 
-Comparing Eastbank's pre-rollout period (Jan–Apr) with the rollout period (May–Dec), all requests changed from **79 total / 19.75 per month** to **309 / 38.63 per month**; hazard requests changed from **44 / 11.00 per month** to **181 / 22.63 per month**. This aligns in time with a channel change, but cannot distinguish reporting volume from underlying conditions. Channel counts further show **3 Mobile, 39 Phone, and 37 Web** requests before the rollout date versus **230 Mobile, 29 Phone, and 50 Web** during the rollout period. Mobile reports were already present before the event's stated start, so the channel and event date should be checked before using this as a clean before/after comparison. May–Aug had **114 hazards (28.50 per month)** and Sep–Dec had **67 (16.75 per month)**; the later period overlaps Eastbank's September rainstorms, so the monthly pattern is not a simple event response.
+Among hazards, closure by intake priority was: High, **n=315**, average **82.11** hours, median **54.02**; Routine, **n=746**, average **49.59**, median **20.11**; Unassigned, **n=61**, average **55.71**, median **36.47**. These are descriptive differences, not evidence that priority caused closure time.
 
-The recorded Staffing Expansion (June 16) is in Riverside, and Triage Workflow Update (September 1) is in Southpoint—not Eastbank. They should not be treated as Eastbank interventions. Event and request counts are aligned by district and dates; associations here are descriptive, not causal.
+### Time and events
+
+Monthly hazard-request counts, in calendar-month order, were:
+
+| Month (2025) | Citywide hazards | Eastbank hazards |
+|---|---:|---:|
+| Jan | 78 | 10 |
+| Feb | 71 | 11 |
+| Mar | 78 | 8 |
+| Apr | 103 | 15 |
+| May | 107 | 32 |
+| Jun | 113 | 30 |
+| Jul | 110 | 25 |
+| Aug | 107 | 27 |
+| Sep | 88 | 16 |
+| Oct | 86 | 20 |
+| Nov | 86 | 15 |
+| Dec | 100 | 16 |
+
+Eastbank’s monthly hazard counts rose from **15 in April to 32 in May**. The events table records an Eastbank (`D02`) mobile reporting rollout from **May 1 through December 31**, a major rainstorm **May 12–16**, and other rainstorms **March 23–26**, **September 5–8**, and **September 20–21**. The timing overlaps, and cannot distinguish an operational/reporting change from changes in underlying incidents.
+
+For a before/after descriptive comparison, Eastbank had **79 total requests and 44 flagged hazards during January–April**, versus **309 requests and 181 flagged hazards during May–December**. The periods span different numbers of months. Channel mix changed alongside the rollout: Mobile/Web/Phone counts were **3/37/39 before**, and **230/50/29 during** the rollout period. Thus the increased request volume is associated with the availability and use of the mobile channel; these data do not establish why reporting changed. Mobile requests in Eastbank had a **63.52%** hazard share (**148/233**), compared with Web **49.43% (43/87)** and Phone **50.00% (34/68)**; channel differences may also reflect what people report through each channel.
+
+The events table also records a Staffing Expansion in district `D05` from **June 16 through December 31** and a Triage Workflow Update in `D06` from **September 1 through December 31**. Neither is recorded for Eastbank (`D02`).
 
 ## 3. Visualizations
 
 ![LLM-flagged hazard requests per 10,000 residents by district](charts/hazard_rate_by_district.png)
 
-This compares population-normalized hazard request counts; Eastbank is highest, while Old Port has the largest request hazard share (the latter is not what this rate measures).
+Eastbank has the highest population-normalized hazard-request rate; this chart uses district population as the denominator.
 
 ![Monthly LLM-flagged hazard requests in Eastbank](charts/eastbank_monthly_hazards.png)
 
-This shows Eastbank's monthly hazard request volume in 2025, including the increase in May and subsequent decline from the summer peak.
+Monthly Eastbank request counts show a peak in May, the month the mobile reporting rollout began.
 
-![Median closure time for LLM-flagged hazards by district](charts/hazard_median_close_by_district.png)
+![Median hours to close LLM-flagged hazards by district](charts/hazard_median_close_by_district.png)
 
-This shows the median hours to close among closed hazard-yes requests, with Old Port higher than the other districts.
+This chart compares median closure times for closed, LLM-flagged hazard requests, with Old Port highest.
 
 ## 4. Classification Analysis
 
-**Intake versus LLM.** The priority cross-tab above shows that most LLM hazard-yes requests were intake Routine; among those, **506** were LLM routine urgency and **244** urgent. Of the **62** Unassigned hazard-yes requests, **37** were LLM urgent and **25** routine. Thus urgency and intake priority do not line up consistently, but neither label is a verified operational severity assessment.
+### Intake versus LLM labels
 
-For intake category versus LLM incident type, I used an explicit comparison crosswalk: Drainage→drainage, General Inquiry→other, Road Maintenance→road, Sanitation→sanitation, Streetlight→electrical, Traffic Signal→traffic_signal, Tree Maintenance→tree, Water Service→water, and Other→other. LLM `unknown` is counted as disagreement. By this crosswalk, General Inquiry had **134 disagreements / 274 requests (48.91%)**, Road Maintenance **121 / 632 (19.15%)**, and intake Other **110 / 126 (87.30%)**. The largest disagreement count is General Inquiry; the highest rate is Other. The “Other” crosswalk is inherently broad, so its rate should not be read as a definitive error rate. These comparisons are not ground-truth accuracy measurements.
+For intake-category comparison, the reproducible correspondence used was: Road Maintenance→road, Drainage→drainage, General Inquiry and Other→other, Sanitation→sanitation, Streetlight→electrical, Traffic Signal→traffic_signal, Tree Maintenance→tree, and Water Service→water. “Disagreement” means the LLM incident type differed from this mapped category; `unknown` is counted as a disagreement. On this basis:
 
-**Validation sample.** Joining `validation_labels` to `enriched` by `request_id` produced **200** matched records. Exact-match accuracy was incident type **197 / 200 (98.50%)**, urgency **196 / 200 (98.00%)**, and safety hazard **152 / 200 (76.00%)**. The observed nonzero safety-hazard confusion cells were:
+| Intake category | Requests | Disagreements | Disagreement share |
+|---|---:|---:|---:|
+| General Inquiry | 274 | 134 | 48.91% |
+| Road Maintenance | 632 | 121 | 19.15% |
+| Other | 126 | 110 | 87.30% |
+| Drainage | 177 | 57 | 32.20% |
+| Sanitation | 286 | 36 | 12.59% |
+| Streetlight | 175 | 24 | 13.71% |
+| Water Service | 145 | 17 | 11.72% |
+| Traffic Signal | 59 | 10 | 16.95% |
+| Tree Maintenance | 126 | 10 | 7.94% |
 
-| Reference safety label | LLM no | LLM unknown | LLM yes |
+General Inquiry had the largest number of mismatches; Other had the largest mismatch share. These results depend on the stated crosswalk, particularly for broad intake categories.
+
+### Validation sample
+
+Joining `validation_labels` to `enriched` by `request_id` gives **200** reference-labelled requests. Exact-match accuracy was:
+
+| Label | Correct / validation rows | Accuracy |
+|---|---:|---:|
+| Incident type | 197 / 200 | 98.50% |
+| Urgency | 196 / 200 | 98.00% |
+| Safety hazard | 152 / 200 | 76.00% |
+
+Safety-hazard confusion counts (reference label by LLM label):
+
+| Reference | LLM no | LLM unknown | LLM yes |
 |---|---:|---:|---:|
 | no | 71 | 2 | 46 |
 | unknown | 0 | 20 | 0 |
 | yes | 0 | 0 | 61 |
 
-There were **46** reference-no records labeled hazard yes; the validation sample therefore cautions against treating the hazard flags as verified facts. The LLM correctly retained the unknown label in **20** reference-unknown cases, while also assigning no in **2** reference-no cases.
+In this sample, 46 reference “no” cases were labelled “yes,” while 20 reference “unknown” cases were also labelled unknown. This reinforces that the hazard count should be treated as an imperfect classification, not ground truth.
 
 ## 5. Caveats
 
-- `unknown` is a separate LLM output, not a synonym for no: **126 requests / 125 incidents** are unknown. Excluding or reallocating these could change comparisons.
-- The safety label's validation accuracy is **76.00% on 200 matched sample records**. The validation sample may not represent all requests; in particular, the confusion table includes **46** reference-no cases labeled yes.
-- There are **6 of 2,000** requests with null `closed_at` and null `hours_to_close` (5 hazard-yes and 1 no/unknown). Closure averages and medians exclude them; open requests may be unresolved rather than quickly handled.
-- District populations differ (from **61,000** in Cedar Hills to **95,000** in Southpoint), so raw counts alone are not comparable. Rates here use resident population but do not account for infrastructure condition, reporting propensity, or exposure.
-- There are **184** duplicate-marked requests. Distinct `incident_id` counts reduce hazard-yes from **1,127 requests to 1,122 incidents**; duplicates can inflate request volume and may be distributed unevenly.
-- Reporting channel changed around the Eastbank mobile rollout, and Mobile appears in the records before the rollout's stated date. Increased reports could reflect access or channel coding as well as conditions. Events are recorded observations, not proof that they caused request changes.
-- LLM and intake labels use request descriptions that may be incomplete or ambiguous; the category crosswalk is an analytical convention, especially for Other and General Inquiry. Priority labels are known to be imperfect. Closure time also reflects workload mix and process, not only hazard severity.
+- **Unknown labels:** 126 requests (125 distinct incident IDs) have `safety_hazard='unknown'`; they are not treated as either hazards or non-hazards here. Unknown urgency also appears in the priority cross-tab.
+- **LLM error:** Safety-hazard accuracy was 76.00% on the 200-request validation sample, lower than incident-type and urgency accuracy. The sample may not represent all requests, and false positives/negatives can alter district and handling comparisons.
+- **Open requests:** `hours_to_close` is null for **6** requests: **5** hazard-yes and **1** unknown. Closure-time summaries therefore describe closed requests only and may exclude unresolved cases.
+- **Different population sizes:** District counts are not directly comparable as risk levels; the per-10,000 rates use district populations. Population-normalized reporting rates still do not measure infrastructure exposure or severity.
+- **Duplicates:** There are **2,000** request rows but **1,986** distinct incident IDs. For hazard-yes, counting distinct incident IDs changes the result from **1,127** requests to **1,122** incidents. Repeat reports can inflate request counts; incident IDs may also group reports whose labels differ.
+- **Reporting and workflow changes:** Eastbank’s mobile rollout coincides with a changed channel mix and higher request volume. Rainstorms also overlap some months. Staffing expansion and triage update events are recorded in other district IDs. These time-aligned associations do not show that any event caused changes in hazard volume or closure time.
+- **Descriptions and intake labels:** Intake categories and priorities are known to be imperfect, and LLM-derived labels rely on request information. Incomplete or ambiguous descriptions can affect both automated classification and validation comparisons. Intake-to-LLM disagreement is not, by itself, proof either label is wrong.
 
 ## 6. Recommendation
 
-Investigate whether Eastbank's Mobile channel start date and reporting-channel coding are consistent with the May 1 rollout record, and whether increased post-May requests reflect newly accessible reporting, a change in underlying hazards, or both. In parallel, audit the Routine and Unassigned intake assignments among LLM-flagged hazards against case descriptions and field outcomes, with particular attention to urgent-tagged cases. These checks would test a plausible triage and measurement concern without assuming that the observed associations establish a cause.
+Investigate whether Eastbank’s increase in flagged requests after the May mobile rollout reflects additional reporting, a change in incident mix, or both. Review a sample of Eastbank mobile submissions from before and after the rollout against the original descriptions and field inspections, and audit whether high-risk cases receive consistent triage—especially because Routine or Unassigned priority accounts for **812/1,127 (72.05%)** of all LLM-flagged hazards citywide. Treat this as a targeted audit question, not a conclusion that the rollout or intake process caused the observed patterns.
